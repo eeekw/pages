@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- lts/*
+install:
+- yarn install
+script:
+- yarn docs:build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: docs/.vuepress/dist
+  github_token: "$GITHUB_TOKEN"
+  keep_history: true
+  on:
+    branch: master
+env:
+  global:
+    secure: cJdW0MA5IGzax+NP3mbqOYTdDG87hoC/0+1WXgwty/xHxvMLO/b9AhNOQWGIgTh1n/L/1dHzaW8fhe8eooCnACwu27OVy26fYTu/P48sdTwGa4W7HuH+2FZFC2hM54KNj3SukrRXOeacEJyhYiEIRw4ZMmj2pV/owtc8qSMKW13xWHjj+3oJ3rv8c//m+sKwVxyVgoiJwgsKwoDHVm5vqSo6jlHlYxy88CHf5vf4B05QW6L0INko4kqIcx3wx1IPmM+dV4AAzSihK2rrdydMmk4m0aD3jeK6r0VXj/VSn2WeLd2u8gT54u1dK6UUkbf9YZCHCgWnxQ4tSKHz8jg3htSECxaj7/YRJyCwCVsUwcfy2Euw/UTGo7jbqaVYRjD6pcVSk9DXpUTXx5qhsou0UTYFGHKEIlswelnLmAvPmIXLKoOUpGmAYefbNOhjHp46NmOfQul/8/2GsQyuZ8WJLsYe+OzINODYmxtnhY7PoJTh18hQLLZhrWfhwMKApwAD5oiokF1xQK9Ib3hH+4vetLdJbzF3fZNxEvm9i439OKMh4Mo/z2iK+QaDJWDgIolF7Bx2HuGZzStT0gDmONCXWVcXyGNuofHt0VZyx5kLTWrhtlzwwQhuBcDLOCojgFiLuEhrcH8n6ZMZkaUXkqQHvu8a513t3ZG0UGvZINZkbYU=
