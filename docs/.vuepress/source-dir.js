@@ -4,11 +4,11 @@ module.exports = {
       path, // 用于生成前端路由的path
       regularPath // 用于生成侧边栏link
     } = $page
-    if (/^\/notes/.test(path)) {
-      $page.path = path.replace(/^\/notes/, '')
+    if (/^\/docs/.test(path)) {
+      $page.path = path.replace(/^\/docs/, '')
     }
-    if (/^\/notes/.test(regularPath)) {
-      $page.regularPath = regularPath.replace(/^\/notes/, '')
+    if (/^\/docs/.test(regularPath)) {
+      $page.regularPath = regularPath.replace(/^\/docs/, '')
     }
   }
 }
