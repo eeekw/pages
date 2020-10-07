@@ -14,31 +14,44 @@ module.exports = {
     locales: {
       '/': {
         lastUpdated: '上次更新',
+        nav: [
+          { text: '前端', link: '/front-end/' },
+          { text: 'Flutter', link: '/flutter/layout' },
+          { text: '其它', link: '/others/git' }
+        ],
         sidebar: {
-          '/': [
+          '/front-end/': [
             '',
+            {
+              title: 'vue',
+              collapsable: false,
+              children: ['source-code', 'vue-note'].map((v) => '/front-end/vue/' + v)
+            },
+            {
+              title: 'react',
+              collapsable: false,
+              children: ['optimizing-performance'].map((v) => '/front-end/react/' + v)
+            },
+            {
+              title: 'typescript',
+              collapsable: false,
+              children: ['declaration-files'].map((v) => '/front-end/typescript/' + v)
+            },
+            {
+              title: 'webpack',
+              collapsable: false,
+              children: ['', 'vue-loader'].map((v) => '/front-end/webpack/' + v)
+            },
+            'performance',
             'babel',
-            'bezier-curve',
-            'cors',
-            'dns',
-            'docker',
-            'gaussian-blur',
-            'git',
-            'http',
-            'husky',
             'javascript',
-            'k8s',
-            'matrix',
             'mpvue',
-            'nginx',
-            'pixel',
-            'software',
             'source-maps',
             'svg',
             'x5',
             {
               title: 'css',
-              path: '/css/',
+              path: '/front-end/css/',
               children: [
                 'animation',
                 'backdrop-filter',
@@ -55,33 +68,24 @@ module.exports = {
                 'radial-gradient',
                 'webkit-box-reflect',
                 'word-break'
-              ].map((v) => '/css/' + v)
-            },
-            {
-              title: 'flutter',
-              path: '/flutter/',
-              children: ['layout', 'flutter-note'].map((v) => '/flutter/' + v)
-            },
-            {
-              title: 'react',
-              path: '/react/',
-              children: ['optimizing-performance'].map((v) => '/react/' + v)
-            },
-            {
-              title: 'typescript',
-              path: '/typescript/',
-              children: ['declaration-files'].map((v) => '/typescript/' + v)
-            },
-            {
-              title: 'vue',
-              path: '/vue/',
-              children: ['source-code', 'vue-note'].map((v) => '/vue/' + v)
-            },
-            {
-              title: 'webpack',
-              path: '/webpack/',
-              children: ['', 'vue-loader'].map((v) => '/webpack/' + v)
+              ].map((v) => '/front-end/css/' + v)
             }
+          ],
+          '/flutter/': ['layout', 'flutter-note'],
+          '/others/': [
+            'git',
+            'http',
+            'cors',
+            'nginx',
+            'docker',
+            'k8s',
+            'pixel',
+            'software',
+            'husky',
+            'gaussian-blur',
+            'bezier-curve',
+            'matrix',
+            'dns'
           ]
         }
       }
